@@ -1,0 +1,24 @@
+DROP TABLE public.userCredentials
+
+CREATE TABLE public.userCredentials 
+(
+	user_id SERIAL PRIMARY KEY, 
+	full_name VARCHAR(100) NOT NULL,
+	card_number VARCHAR(16) NOT NULL, 
+	card_expiration_date VARCHAR(10) NOT NULL, 
+	challenge_code VARCHAR(6), 
+	balance integer NOT NULL, 
+	client_number integer
+)
+
+INSERT INTO public.userCredentials
+	(full_name, card_number, card_expiration_date, 
+	 challenge_code, balance, client_number)
+	VALUES 
+	('Brinzila Maria', '1234567890', '12/2/23',
+	 '123', 1000, 100);
+	
+SELECT balance FROM public.userCredentials
+	WHERE card_number = '1234567890'
+	AND card_expiration_date = '12/2/23'
+	AND challenge_code = '123';
