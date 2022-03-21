@@ -96,12 +96,12 @@ mID = separated[6]
 
 # database connection
 database = psycopg2.connect("dbname=postgres user=postgres "
-                            "password=mariaB2000")
+                            "password=password")
 
 database = psycopg2.connect(host="localhost",
                             database="postgres",
                             user="postgres",
-                            password="mariaB2000")
+                            password="password")
 
 # database query
 cursor = database.cursor()
